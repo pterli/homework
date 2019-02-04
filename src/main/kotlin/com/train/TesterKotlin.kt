@@ -6,17 +6,17 @@ const val TicketPrice = 1000
 fun main(args: Array<String>) {
     val scanner = Scanner(System.`in`)
     print("Please enter number of tickets: ")
-    var totaltickets = scanner.nextInt()
+    var totalTickets = scanner.nextInt()
     print("How many round-trip tickets:")
-    var roundtickets = scanner.nextInt()
-    val result = TicketCalculator(totaltickets, roundtickets)
+    var roundTickets = scanner.nextInt()
+    val result = TicketCalculator(totalTickets, roundTickets)
     result.calculation()
 }
 
-class TicketCalculator(var totaltickets: Int, var roundtickets: Int){
+class TicketCalculator(var totalTickets: Int, var roundTickets: Int){
     fun calculation(){
-        println("Total Tickets: $totaltickets")
-        println("Round-trip: $roundtickets")
-        println("Total: " + ( (totaltickets - roundtickets) * TicketPrice +roundtickets * TicketPrice * 2 * 0.9))
+        println("Total Tickets: $totalTickets")
+        println("Round-trip: $roundTickets")
+        println("Total: " + ( (totalTickets - roundTickets) * TicketPrice +roundTickets * TicketPrice * 2 * 0.9))
     }
 }
