@@ -5,12 +5,19 @@ const val TicketPrice = 1000
 
 fun main(args: Array<String>) {
     val scanner = Scanner(System.`in`)
-    print("Please enter number of tickets: ")
-    var totalTickets = scanner.nextInt()
-    print("How many round-trip tickets:")
-    var roundTickets = scanner.nextInt()
-    val result = TicketCalculator(totalTickets, roundTickets)
-    result.calculation()
+    var totalTickets = 0
+    while (totalTickets != -1) {
+        print("Please enter number of tickets: ")
+        var totalTickets = scanner.nextInt()
+        if (totalTickets != -1){
+            print("How many round-trip tickets:")
+            var roundTickets = scanner.nextInt()
+            val result = TicketCalculator(totalTickets, roundTickets)
+            result.calculation()
+        }else{
+            break
+        }
+    }
 }
 
 class TicketCalculator(var totalTickets: Int, var roundTickets: Int){
